@@ -522,7 +522,15 @@ BusEvtChildListScanForChildren(
 
     if (!NT_SUCCESS(status))
     {
-        Info("Failed to perform directory in xenstore.\n");
+        /* This callback has a duty to update PnP of child devices. Since this
+         * is called after a USB has been removed, hotplugged or otherwise, the event channel can
+         * be torn down when called. Mark devices as missing and return. For more info:
+         *
+         * https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_scan_for_children
+         */
+        Info("Failed to perform xenstore query. Marking child devices as missing to PnP.\n");
+        WdfChildListBeginScan(ChildList);
+        WdfChildListEndScan(ChildList);
         return;
     }
 
