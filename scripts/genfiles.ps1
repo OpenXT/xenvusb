@@ -90,8 +90,3 @@ $solutionpath = Resolve-Path $SolutionDir
 $src = Join-Path -Path $sourcepath -ChildPath "xenvusb.inf"
 $dst = Join-Path -Path $solutionpath -ChildPath "xenvusb.inf"
 Copy-FileWithReplacements $src $dst -Replacements $Replacements
-
-$sourcepath = Resolve-Path $SourceDir
-$src = Join-Path -Path $sourcepath -ChildPath "xenvusb.mof"
-$dst = Join-Path -Path $sourcepath -ChildPath 'xenvusb\wmi.mof'
-Copy-FileWithReplacements $src $dst -Replacements $Replacements

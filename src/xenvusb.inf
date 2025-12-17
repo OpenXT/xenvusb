@@ -37,10 +37,6 @@ CoInst_CopyFiles=11
 
 [SourceDisksFiles]
 xenvusb.sys=0,,
-xenvusb_coinst.dll=0,,
-
-[CoInst_CopyFiles]
-xenvusb_coinst_@MAJOR_VERSION@_@MINOR_VERSION@_@MICRO_VERSION@_@BUILD_NUMBER@.dll,xenvusb_coinst.dll
 
 [Manufacturer]
 %Vendor%=Inst,NT@INF_ARCH@
@@ -69,13 +65,6 @@ StartType=%SERVICE_DEMAND_START%
 ErrorControl=%SERVICE_ERROR_NORMAL%
 ServiceBinary=%12%\xenvusb.sys
 LoadOrderGroup = Extended Base
-
-[XenVusb_Inst.CoInstallers]
-CopyFiles=CoInst_CopyFiles
-AddReg=CoInst_AddReg
-
-[CoInst_AddReg]
-HKR,,CoInstallers32,0x00010000,"xenvusb_coinst_@MAJOR_VERSION@_@MINOR_VERSION@_@MICRO_VERSION@_@BUILD_NUMBER@.dll,Entry"
 
 [Strings]
 
