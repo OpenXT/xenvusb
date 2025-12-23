@@ -1,0 +1,6 @@
+/.build_number
+/include/version.h
+x64/
+Win32/
+vs2019/xenvusb.inf
+vs2019/version/.revision
