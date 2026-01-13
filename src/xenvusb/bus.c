@@ -640,8 +640,8 @@ BusEvtChildListIdentificationDescriptionCompare(
 
 VOID
 BusEvtChildListIdentificationDescriptionCleanup(
-    _In_ WDFCHILDLIST DeviceList,
-    _Out_ PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER IdentificationDescription
+    IN WDFCHILDLIST DeviceList,
+    OUT PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER IdentificationDescription
 )
 {
     PPDO_IDENTIFICATION_DESCRIPTION pDesc;

@@ -42,10 +42,7 @@
 #include "dbg_print.h"
 #include "version.h"
 
-NTSTATUS
-DriverEntry(
-    _In_ PDRIVER_OBJECT  DriverObject,
-    _In_ PUNICODE_STRING RegistryPath);
+DRIVER_INITIALIZE DriverEntry;
 
 #ifdef ALLOC_PRAGMA
 #pragma alloc_text (INIT, DriverEntry)
